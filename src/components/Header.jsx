@@ -53,7 +53,7 @@ const Header = () => {
           </div>
         )}
 
-        <Link className="flex h-5 items-center">
+        <Link className="flex h-5 items-center" to="/">
           <img
             className="h-full hidden dark:md:block"
             src={ytLogo}

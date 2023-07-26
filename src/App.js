@@ -3,7 +3,7 @@ import AppContext from "./context/contextApi";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Feed from "./components/feed/Feed";
-import SearchResults from "./components/SearchResults";
+import SearchResults from "./components/searchResults/SearchResults";
 import VideoDetails from "./components/video/VideoDetails";
 
 const App = () => {
