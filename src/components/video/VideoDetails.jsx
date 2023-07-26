@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import ReactPlayer from "react-player/youtube";
-import { BsFillCheckCircleFill } from "react-icons/bs";
 import { AiOutlineLike } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import { abbreviateNumber } from "js-abbreviation-number";
 import { Context } from "../../context/contextApi";
 import { fetchData } from "../../utils/api";
 import SuggestionVideoCard from "./SuggestionVideoCard";
+import AuthorStats from "./videoStats/AuthorStats";
+import Avatar from "./videoStats/Avatar";
 
 const VideoDetails = () => {
   const [video, setVideo] = useState();
@@ -56,20 +57,14 @@ const VideoDetails = () => {
           <div className="flex justify-between flex-col md:flex-row mt-4">
             <div className="flex">
               <div className="flex items-start">
-                <div className="flex h-11 w-11 rounded-full overflow-hidden">
-                  <img
-                    alt="author"
-                    src={video?.author?.avatar[0]?.url}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <Avatar url={video?.author?.avatar[0]?.url} />
               </div>
               <div className="flex flex-col ml-3">
                 <div className="text-white text-md font-semibold flex items-center">
-                  {video?.author?.title}
-                  {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
-                    <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
-                  )}
+                  <AuthorStats
+                    title={video?.author?.title}
+                    badgeType={video?.author?.badges[0]?.type}
+                  />
                 </div>
                 <div className="text-white/[0.7] text-sm">
                   {video?.author?.stats?.subscribersText}

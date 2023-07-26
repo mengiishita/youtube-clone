@@ -15,8 +15,7 @@ const AppContext = ({ children }) => {
 
   const fetchSelectedCategoryData = (query) => {
     setLoading(true);
-    fetchData(`search/?q=${query}`).then(({contents}) => {
-      console.log(contents);
+    fetchData(`search/?q=${query}`).then(({ contents }) => {
       setSearchResults(contents);
       setLoading(false);
     });

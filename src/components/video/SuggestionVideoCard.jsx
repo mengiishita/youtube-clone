@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { abbreviateNumber } from "js-abbreviation-number";
-import { BsFillCheckCircleFill } from "react-icons/bs";
 import VideoLength from "../../shared/VideoLength";
+import VideoStats from "./videoStats/VideoStats";
+import AuthorStats from "./videoStats/AuthorStats";
 
 const SuggestionVideoCard = ({ video }) => {
   return (
@@ -21,17 +21,16 @@ const SuggestionVideoCard = ({ video }) => {
             {video?.title}
           </span>
           <span className="text-[12px] lg:text-[10px] xl:text-[12px] font-semibold mt-2 text-white/[0.7] flex items-center">
-            {video?.author?.title}
-            {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
-              <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] lg:text-[10px] xl:text-[12px] ml-1" />
-            )}
+            <AuthorStats
+              title={video?.author?.title}
+              badgeType={video?.author?.badges[0]?.type}
+            />
           </span>
           <div className="flex text-[12px] lg:text-[10px] xl:text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden">
-            <span>{`${abbreviateNumber(video?.stats?.views, 2)} views`}</span>
-            <span className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1">
-              .
-            </span>
-            <span className="truncate">{video?.publishedTimeText}</span>
+            <VideoStats
+              views={video?.stats?.views}
+              pubTime={video?.publishedTimeText}
+            />
           </div>
         </div>
       </div>
