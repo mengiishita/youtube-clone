@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Feed from "./components/feed/Feed";
 import SearchResults from "./components/SearchResults";
-import VideoDetails from "./components/VideoDetails";
+import VideoDetails from "./components/video/VideoDetails";
 
 const App = () => {
   return (
