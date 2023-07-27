@@ -1,6 +1,37 @@
-# Getting Started with Create React App
+# Youtube Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://create-react-app.dev/), using [Tailwind CSS(https://tailwindcss.com/)], [React context(https://react.dev/learn/passing-data-deeply-with-context)] and [react-router](https://v5.reactrouter.com/web/guides/quick-start)
+
+## Description
+
+This is a fully functional and full responsive Youtube clone where data is being fetched from the youtube API provided by Rapid Hub.
+
+It is possible to load videos for different categories mentioned in the left navigation. 
+You can also click on a video to go to the video details page. You will be able to see all the video stats and suggestion videos on video details page.
+You can also search for any video on the website and search results are displayed.
+
+For the API, [RapidAPI(https://rapidapi.com/hub)] was used.
+
+## Links
+
+Live Application: [https://im-youtube.netlify.app](https://im-youtube.netlify.app)
+
+## Packages and Technologies used:
+
+[React](https://react.dev/learn)
+
+[Tailwind CSS](https://tailwindcss.com/)
+
+[React Router](https://v5.reactrouter.com/web/guides/quick-start)
+
+[react-icons](https://www.npmjs.com/package/react-icons)
+
+[react-player](https://www.npmjs.com/package/react-player)
+
+[moment](https://momentjs.com/)
+
+[axios](https://axios-http.com/docs/intro)
+
 
 ## Available Scripts
 
